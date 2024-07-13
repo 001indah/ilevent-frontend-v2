@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { signIn, useSession } from "next-auth/react";
 
 interface NavbarProps {
     isNavbarFixed: boolean;
@@ -29,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
                 ))}
             </ul>
             <div className='ml-8 flex gap-2 items-center justify-start m-4'>
-                <Button className={`bg-transparent border font-bold border-white hover:border-none ${isNavbarFixed ? ' text-black border-black hover:bg-slate-300 hover:border' : 'hover:bg-sky-200 hover:text-black'}`}>
+                <Button onClick={() => signIn()} className={`bg-transparent border font-bold border-white hover:border-none ${isNavbarFixed ? ' text-black border-black hover:bg-slate-300 hover:border' : 'hover:bg-sky-200 hover:text-black'}`}>
                     <Link href="/sign-in">
                         Sign in
                     </Link>

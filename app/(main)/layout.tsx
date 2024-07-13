@@ -1,7 +1,7 @@
 // import Footer from '@/components/Footer';
 // import Header from '@/components/Header';
 import Footer from "@/components/Footer";
-import Navbar from "@/components/NavBar/Header/indexAvatar";
+import Navbar from "@/components/NavBar/Header/index";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (

@@ -63,7 +63,7 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import LoginValidation from '@/validations/LoginValidation';
-import { signIn } from 'next-auth/react'; // Updated import
+import { signIn } from "next-auth/react";
 
 interface LoginValues {
     email: string;
@@ -86,25 +86,25 @@ const useLoginForm = () => {
         setShow((prevState) => !prevState);
     };
 
-    const postData = async (email: string, password: string) => {
-        try {
-            const response = await axios.post('http://localhost:8080/login', { email, password });
-            const { access_token, role } = response.data;
-            document.cookie = `access_token=${access_token}; path=/;`;
+    // const postData = async (email: string, password: string) => {
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/login', { email, password });
+    //         const { access_token, role } = response.data;
+    //         document.cookie = `access_token=${access_token}; path=/;`;
 
-            // Redirect based on role
-            if (role === 'ROLE_USER') {
-                window.location.href = 'http://localhost:3000';
-            } else if (role === 'ROLE_ORGANIZER') {
-                window.location.href = 'http://localhost/event';
-            }
-            return true;
-        } catch (error) {
-            console.error('login error:', error);
-            setErrorMessage('Invalid email or password');
-            return false;
-        }
-    };
+    //         // Redirect based on role
+    //         if (role === 'ROLE_USER') {
+    //             window.location.href = 'http://localhost:3000';
+    //         } else if (role === 'ROLE_ORGANIZER') {
+    //             window.location.href = 'http://localhost/event';
+    //         }
+    //         return true;
+    //     } catch (error) {
+    //         console.error('login error:', error);
+    //         setErrorMessage('Invalid email or password');
+    //         return false;
+    //     }
+    // };
 
     const formik = useFormik({
         initialValues,
@@ -117,9 +117,10 @@ const useLoginForm = () => {
     const handleSubmit = async (values: LoginValues) => {
         try {
             const result = await signIn('credentials', {
-                redirect: false,
-                email: values.email,
+                username: values.email,
                 password: values.password,
+                redirect: true,
+                callbackUrl: "/",
             });
 
             if (result?.error) {

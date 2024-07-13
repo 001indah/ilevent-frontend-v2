@@ -10,28 +10,27 @@ import { JWT } from "next-auth/jwt";
 
 //interface hasil decode
 interface DecodedToken {
-    iss: string; // Issuer
+    iss: string;
     iat: number; // Issued At (timestamp)
     exp: number; // Expiration Time (timestamp)
     sub: string; // Subject
     scope: string; // Scope
     userId: number; // User ID
 }
-
 //interface user
 interface UserSession {
     id: string;
     email: string;
     role: string;
 }
-
 //auth
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
+        // kalau login porofider apa aja, kita pilih credential karena kita pake username dan password untuk login
         // Menentukan provider otentikasi, dalam hal ini menggunakan Credentials untuk mengautentikasi menggunakan username dan password.
         Credentials({
             credentials: {
-                username: { label: "Email", type: "text", placeholder: "username" },
+                username: { label: "Email", type: "text", placeholder: "email" },
                 password: { label: "Password", type: "password" },
             },
             /**
@@ -43,9 +42,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
              * @return {Promise<Object>} The user information.
              * @throws {Error} If the user is not found.
              */
+            //method untuk autorizasi apakah username pass benar atau tidak, cara cek dengan cek endpoint login dari backend
             async authorize(credentials) {
                 // Send a POST request to the login endpoint with the user credentials.
                 const res = await fetch(config.BASE_URL + config.endpoints.login, {
+                    // const res = await fetch(config.BASE_URL + config.endpoints.login, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -70,6 +71,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 }
 
                 // Set the session ID cookie.
+                //nama token
                 const useCookies = cookies();
                 useCookies.set("sid", user.token, {
                     httpOnly: true,

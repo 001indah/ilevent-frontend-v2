@@ -1,13 +1,13 @@
 import React from 'react';
-// import Sidebar from './_components/Sidebar';
+import Sidebar from './_components/sidebar';
 // import Header from './_components/Header';
 
 const OrganizerLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div>
-            <p>sidebar</p>
-            {/* <Sidebar /> */}
-            <div className='ml-72'>
+        <div className='flex w-full'>
+            {/* <p>sidebar</p> */}
+            <Sidebar />
+            <div className='w-full p-4 lg:p-16'>
                 <p> Header This is an organizer layout</p>
                 {/* <Header /> */}
                 {children}
