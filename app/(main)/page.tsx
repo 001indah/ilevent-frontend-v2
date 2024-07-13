@@ -9,7 +9,7 @@ import Transaction from '@/app/(main)/events/[eventDetail]/[transaction]/page';
 
 const page = () => {
     return (
-        <div className='w-full lg:p-16 p-4 mt-24 '>
+        <div className='w-full lg:p-16 p-4 mt-24'>
             <Carousel />
             <Category />
             <Event data={events} title={"Top Event 🔥"} link={"/events?sort=most-popular"} />

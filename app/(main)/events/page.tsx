@@ -21,6 +21,7 @@ import Search from '@/components/ui/Search';
 import EventList from '@/app/(main)/events/_components/eventList';
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Sidebar from './_components/sidebar';
 
 const dummyTotalPages = 5; // Example total pages for pagination
 
@@ -31,23 +32,28 @@ export default function Page() {
     const totalPages = dummyTotalPages; // Using dummy total pages
 
     return (
-        <div className="w-full p-16">
-            <div className="flex w-full items-center justify-between">
-                <h1 className={`font-bold text-2xl`}>Ilevent</h1>
+        <div className='flex'>
+            <div>
+                <Sidebar />
             </div>
-            <div className="my-8 flex items-center justify-between gap-2 md:mt-8">
-                <Search placeholder="Search invoices..." />
-            </div>
-            <Suspense key={query + currentPage} fallback={<div>Loading...</div>}>
-                <EventList />
-            </Suspense>
-            <div className="mt-5 flex w-full justify-center">
-                {/* <Pagination totalPages={totalPages} /> */}
-                {/* <Pagination
+            <div className="w-full p-16">
+                <div className="flex w-full items-center justify-between">
+                    <h1 className={`font-bold text-2xl`}>Ilevent</h1>
+                </div>
+                <div className="my-8 flex items-center justify-between gap-2 md:mt-8">
+                    <Search placeholder="Search invoices..." />
+                </div>
+                <Suspense key={query + currentPage} fallback={<div>Loading...</div>}>
+                    <EventList />
+                </Suspense>
+                <div className="mt-5 flex w-full justify-center">
+                    {/* <Pagination totalPages={totalPages} /> */}
+                    {/* <Pagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     onPageChange={handlePageChange}
                 /> */}
+                </div>
             </div>
         </div>
     );
