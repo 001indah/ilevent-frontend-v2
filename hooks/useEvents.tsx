@@ -1,0 +1,1 @@
+//rendering data memisahkan logika pengambilan data dari komponen
