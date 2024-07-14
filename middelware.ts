@@ -1,19 +1,31 @@
-// export { auth as middleware } from "@/auth";
+// import { NextResponse } from 'next/server';
+// import { auth } from './lib/auth';
 
+// export default auth((req) => {
+//     const isLoggedIn = !!req.auth;
+//     const isOnLoginPage = req.nextUrl.pathname.startsWith('/login');
 
-// // Penggunaan middleware dalam kode
-import { NextResponse } from 'next/server';
-import { getToken } from 'next-auth/jwt';
-import { auth } from '@/auth';
+//     if (isOnLoginPage) {
+//         if (isLoggedIn) {
+//             return NextResponse.redirect(new URL('/', req.url));
+//         }
+//         return null;
+//     }
 
-export async function middleware(req) {
-    const token = await getToken({ req });
-    if (!token) {
-        return NextResponse.redirect(new URL('/api/auth/signin', req.url));
-    }
-    return NextResponse.next();
-}
+//     if (!isLoggedIn) {
+//         return NextResponse.redirect(new URL('/login', req.url));
+//     }
 
-export const config = {
-    matcher: ['/dashboard/:path*', '/profile/:path*'], // Adjust paths as needed
-};
+//     // Cek role untuk akses ke halaman organizer
+//     if (req.nextUrl.pathname.startsWith('/organizer')) {
+//         if (req.auth?.user?.role !== 'ORGANIZER') {
+//             return NextResponse.redirect(new URL('/', req.url));
+//         }
+//     }
+
+//     return null;
+// });
+
+// export const config = {
+//     matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+// };
