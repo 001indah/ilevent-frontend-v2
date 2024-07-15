@@ -8,7 +8,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     const [queryClient] = useState(() => new QueryClient({
         defaultOptions: {
             queries: {
-                // Configura las opciones por defecto aquí
+
                 staleTime: 60 * 1000, // 1 minuto
             },
         },
@@ -17,7 +17,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     return (
         <QueryClientProvider client={queryClient}>
             {children}
-            <ReactQueryDevtools initialIsOpen={false} />
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
     )
 }
