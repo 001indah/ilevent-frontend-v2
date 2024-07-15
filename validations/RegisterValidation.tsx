@@ -19,7 +19,7 @@ const RegisterValidation = Yup.object().shape({
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
     role: Yup.string().oneOf(['personal', 'organization'], 'Invalid role').required('Role is required'),
     phone: Yup.string().required('Phone number is required'),
-    referralCode: Yup.string() || "null",
+    referralCode: Yup.string() || null,
 });
 
 export default RegisterValidation;

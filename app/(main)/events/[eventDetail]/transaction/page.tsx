@@ -2,7 +2,7 @@
 import React from 'react';
 import { events } from '@/app/(main)/_data/eventData';
 import PointsAndPayment from './_components/PointCard';
-import CouponCard from './_components/cuponCard';
+import CouponCard from './_components/CuponCard';
 
 // Helper function to ensure we're working with numbers
 const toNumber = (value) => {
@@ -10,7 +10,7 @@ const toNumber = (value) => {
     return isNaN(num) ? 0 : num;
 };
 
-const formatPrice = (price) => `$${toNumber(price).toFixed(2)}`;
+const formatPrice = (price) => `${toNumber(price).toFixed(2)}`;
 
 const OrderCard = ({ event }) => (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
@@ -24,6 +24,7 @@ const OrderCard = ({ event }) => (
             </div>
         </div>
         <div className="border-t pt-4">
+
             <div className="flex justify-between mb-2">
                 <span>Original Price</span>
                 <span>{formatPrice(event.price)}</span>

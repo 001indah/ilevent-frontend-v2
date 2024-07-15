@@ -5,12 +5,12 @@ import Navbar from "@/components/NavBar/Header/index";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="mt-24 lg:mt-32">
+        <div className="mt-24 lg:mt-28">
             {/* <p>This is a main layout (header)</p> */}
             <Navbar />
             {children}
             {/* <Footer /> */}
-            <p>This is a main layout (footer)</p>
+            {/* <p>This is a main layout (footer)</p> */}
             <Footer />
         </div>
     );

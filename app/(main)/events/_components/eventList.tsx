@@ -379,11 +379,11 @@ const Event: React.FC<EventListProps> = ({ className }) => {
 
     const handleSearchChange = useDebouncedCallback((query: string) => {
         setSearchQuery(query);
-        setCurrentPage(1); // Reset to first page on new search
+        // setCurrentPage(1); // Reset to first page on new search
         const params = new URLSearchParams(searchParams);
-        params.set('query', query);
-        params.set('page', '1');
-        router.push(`?${params.toString()}`);
+        params.set('search', query);
+        // params.set('page', '1');
+        router.push(`?keyword=${query}&${params.toString()}`);
     }, 300);
 
     if (isLoading) return <div>Loading...</div>;

@@ -45,6 +45,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from './ReduxProvider';
+import { AuthProvider } from "@/context/AuthContext";
 
 const JakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -64,10 +65,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={JakartaSans.className}>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+        <AuthProvider>
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
+        </AuthProvider>
       </body>
-    </html>
+    </html >
   );
 }

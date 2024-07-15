@@ -56,7 +56,7 @@ export default function Page({ params }: { params: { eventDetail: string } }) {
     const formattedTitle = titleSlug ? titleSlug.replace(/-/g, ' ') : event.title;
 
     return (
-        <div className='lg:px-16 p-4'>
+        <div className='lg:px-16 lg:py-16 p-4'>
             <div>
                 <EventCard
                     id={event.id}
