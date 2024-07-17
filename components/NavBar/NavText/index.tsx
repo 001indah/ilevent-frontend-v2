@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { signIn, useSession } from "next-auth/react";
 
 interface NavbarProps {
     isNavbarFixed: boolean;
@@ -12,9 +11,9 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) => {
     const menuItems = [
         { title: "Home", href: "/" },
-        { title: "About Us", href: "/AboutUs" },
-        { title: "Our Teams", href: "/OurTeam" },
-        { title: "Product", href: "/Service" },
+        { title: "Events", href: "/events" },
+        { title: "Profile", href: "/profile" },
+        { title: "Dashboard", href: "/organizer" },
         // { title: "Testimonials", href: "/Testimonials" }
     ];
 
@@ -30,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
                 ))}
             </ul>
             <div className='ml-8 flex gap-2 items-center justify-start m-4'>
-                <Button onClick={() => signIn()} className={`bg-transparent border font-bold border-white hover:border-none ${isNavbarFixed ? ' text-black border-black hover:bg-slate-300 hover:border' : 'hover:bg-sky-200 hover:text-black'}`}>
+                <Button className={`bg-transparent border font-bold border-white hover:border-none ${isNavbarFixed ? ' text-black border-black hover:bg-slate-300 hover:border' : 'hover:bg-sky-200 hover:text-black'}`}>
                     <Link href="/sign-in">
                         Sign in
                     </Link>
@@ -40,6 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
                         Sign up
                     </Link>
                 </Button>
+
             </div>
         </nav>
     );

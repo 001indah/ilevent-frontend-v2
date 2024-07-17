@@ -1,9 +1,10 @@
 import React from 'react'
 import Register from './_components/Registers'
 
+
 const page = () => {
     return (
-        <div >
+        <div>
             <Register />
         </div>
     )

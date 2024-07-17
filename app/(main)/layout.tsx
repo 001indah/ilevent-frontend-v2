@@ -1,19 +1,17 @@
-// import Footer from '@/components/Footer';
-// import Header from '@/components/Header';
 import Footer from "@/components/Footer";
-import Navbar from "@/components/NavBar/Header/index";
+import Navbar from "@/components/NavBar/Navbar";
+import { AuthProvider } from '@/context/AuthContext';
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const OrganizerLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="mt-24 lg:mt-28">
-            {/* <p>This is a main layout (header)</p> */}
-            <Navbar />
-            {children}
-            {/* <Footer /> */}
-            {/* <p>This is a main layout (footer)</p> */}
-            <Footer />
-        </div>
+        <AuthProvider>
+            <div className="mt-24 lg:mt-28">
+                <Navbar />
+                {children}
+                <Footer />
+            </div>
+        </AuthProvider>
     );
 };
 
-export default MainLayout;
+export default OrganizerLayout;

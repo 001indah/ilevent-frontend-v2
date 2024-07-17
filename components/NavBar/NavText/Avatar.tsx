@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
 import {
     Avatar,
@@ -45,10 +46,11 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) => {
+    const { isAuthenticated, logout } = useAuth();
     const menuItems = [
         { title: "Home", href: "/" },
-        { title: "About Us", href: "/" },
-        { title: "Our Teams", href: "/" },
+        { title: "Events", href: "/events" },
+        // { title: "Our Teams", href: "/" },
         { title: "Product", href: "/" },
         // { title: "Testimonials", href: "/Testimonials" }
     ];
@@ -94,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>
+                        <DropdownMenuItem onClick={logout}>
                             <LogOut className="mr-2 h-4 w-4" />
                             <span>Log out</span>
                         </DropdownMenuItem>

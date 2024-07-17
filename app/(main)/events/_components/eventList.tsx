@@ -409,6 +409,7 @@ const Event: React.FC<EventListProps> = ({ className }) => {
                 totalPages={Math.ceil(events.length / ITEMS_PER_PAGE)}
                 onPageChange={handlePageChange}
             />
+
         </div>
     );
 };
