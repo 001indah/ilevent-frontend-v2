@@ -22,6 +22,7 @@ import EventList from '@/app/(main)/events/_components/eventListApi';
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SearchAndFilter from './_components/sidebar';
+import Carousel from './_components/Carousel';
 
 const dummyTotalPages = 5; // Example total pages for pagination
 
@@ -49,7 +50,8 @@ export default function Page() {
     const totalPages = dummyTotalPages; // Using dummy total pages
 
     return (
-        <div className='flex'>
+        <div >
+            <Carousel />
             {/* <div>
                 <SearchAndFilter
                     placeholder="Search events..."
@@ -57,9 +59,9 @@ export default function Page() {
                     locations={locations}
                 />
             </div> */}
-            <div className="w-full p-16">
+            <div className="w-full px-16">
                 <div className="flex w-full items-center justify-between">
-                    <h1 className={`font-bold text-2xl`}>Ilevent</h1>
+                    {/* <h1 className={`font-bold text-2xl`}>Ilevent</h1> */}
                 </div>
                 {/* <div className="my-8 flex items-center justify-between gap-2 md:mt-8">
                     <Search placeholder="Search invoices..." />
