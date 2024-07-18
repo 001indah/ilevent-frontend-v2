@@ -4,7 +4,8 @@ import Login from './_components/Login'
 
 const page = () => {
     return (
-        <div>
+        <div className='grid grid-cols-[1fr,1fr]'>
+
             <Login />
         </div>
 

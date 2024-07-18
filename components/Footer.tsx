@@ -5,11 +5,24 @@ import logoWhite from '@/public/carousel.png';
 
 const Footer = () => {
     const cardData = [
-        { title: "About Us", list: ["Career", "Support", "Locations", "Blog", "Scholarship", "Promo", "Press"] },
-        { title: "Our Program", list: ["Job Connector Bootcamp", "Skill Accelerator Bootcamp", "Digital Talent Incubator", "Purwadhika College", "Corporate Training"] },
-        { title: "Community", list: ["Alumni Club", "Alumni Stories", "Community Partner"] },
-        { title: "Contact Us", list: ["021 5012 3161 (BSD & SBY)", "021 5050 1361 (JKT)", "077 8212 1361 (BTM)", "022 2100 2361 (BDG)", "027 4210 0361 (JOG)", "0851 8602 9606 (Whatsapp)"] },
+        {
+            title: "Popular Events",
+            list: ["Music Concerts", "Sports Events", "Conferences", "Festivals", "Workshops", "Seminars", "Film Screenings"]
+        },
+        {
+            title: "Upcoming Events",
+            list: ["Rock Concert in Jakarta", "Startup Conference in Bali", "Food Festival in Surabaya", "Tech Workshop in Bandung", "Fashion Show in Yogyakarta"]
+        },
+        {
+            title: "Event Categories",
+            list: ["Music", "Sports", "Business", "Science", "Arts", "Technology", "Travel"]
+        },
+        {
+            title: "Contact Us",
+            list: ["021 1234 5678 (Jakarta)", "031 9876 5432 (Surabaya)", "022 1234 5678 (Bandung)", "0361 8765 4321 (Bali)", "0274 1234 5678 (Yogyakarta)", "0851 2345 6789 (Whatsapp)"]
+        },
     ];
+
 
     const socialMediaLinks = [
         {

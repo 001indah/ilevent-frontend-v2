@@ -439,7 +439,6 @@ import { createContext, useState, useEffect, useContext, ReactNode } from 'react
 import { useRouter } from 'next/navigation';
 import apiClient from '@/services/apiClient';
 import { User } from '@/types/User';
-import jwtDecode from 'jwt-decode';
 
 interface AuthContextProps {
     isAuthenticated: boolean;
@@ -451,6 +450,7 @@ interface AuthContextProps {
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+
 
 const TOKEN_KEY = 'sid'; // Key for sessionStorage
 

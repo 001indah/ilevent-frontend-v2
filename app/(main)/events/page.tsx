@@ -18,7 +18,7 @@
 'use client';
 import Pagination from './_components/pagination';
 import Search from '@/components/ui/Search';
-import EventList from '@/app/(main)/events/_components/eventList';
+import EventList from '@/app/(main)/events/_components/eventListApi';
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SearchAndFilter from './_components/sidebar';
@@ -50,13 +50,13 @@ export default function Page() {
 
     return (
         <div className='flex'>
-            <div>
+            {/* <div>
                 <SearchAndFilter
                     placeholder="Search events..."
                     categories={categories}
                     locations={locations}
                 />
-            </div>
+            </div> */}
             <div className="w-full p-16">
                 <div className="flex w-full items-center justify-between">
                     <h1 className={`font-bold text-2xl`}>Ilevent</h1>

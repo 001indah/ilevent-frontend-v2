@@ -8,7 +8,7 @@ const page = () => {
 
         <div>
             dashboard
-            <CreateEvent />
+            {/* <CreateEvent /> */}
         </div>
 
     )

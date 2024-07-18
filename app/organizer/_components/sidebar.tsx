@@ -160,46 +160,44 @@ const sidebar = () => {
             </Button>
             <Button className='w-full bg-black justify-start hover:bg-slate-600'>
                 <Link
-                    href="/organizer/dashboard/invoices"
+                    href="/organizer/events/create"
                     className="flex items-center gap-2 "
                 >
-                    <TicketIcon className="h-6 w-6" /> Invoice
+                    <TicketIcon className="h-6 w-6" /> Create Event
                 </Link>
             </Button>
-            <Button className='w-full bg-black justify-start hover:bg-slate-600'>
+            {/* <Button className='w-full bg-black justify-start hover:bg-slate-600'>
                 <Link
                     href="/organizer"
                     className="flex items-center gap-2 "
                 >
                     <CalendarDays className="h-6 w-6" /> Back
                 </Link>
-            </Button>
-            <Button className='w-full justify-start bg-black hover:bg-slate-600'>
+            </Button> */}
+            {/* <Button className='w-full justify-start bg-black hover:bg-slate-600'>
                 <Link
                     href="/organizer"
                     className="flex items-center gap-2 "
                 >
                     <Users className="h-6 w-6" /> Back
                 </Link>
-            </Button>
+            </Button> */}
             <Button className='w-full bg-black justify-start hover:bg-slate-600'>
                 <Link
-                    href="/organizer/chart"
+                    href="/organizer/dashboard/chart"
                     className="flex items-center gap-2 "
                 >
                     <BarChart3 className="h-6 w-6" /> Chart
                 </Link>
             </Button>
-            <Button className='w-full bg-black justify-start hover:bg-slate-600'>
+            {/* <Button className='w-full bg-black justify-start hover:bg-slate-600'>
                 <Link
                     href="/organizer"
                     className="flex items-center gap-2 "
                 >
                     <Settings className="h-6 w-6" /> Back
                 </Link>
-            </Button>
-
-
+            </Button> */}
         </div>
     )
 }

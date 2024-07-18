@@ -12,6 +12,7 @@ const apiClient = axios.create({
     // Menetapkan header default untuk semua permintaan
     headers: {
         'Content-Type': 'application/json',
+        // 'Authorization': `Bearer ${getToken()}`, // Add Authorization header with the token
     },
     // Menetapkan withCredentials menjadi true untuk menyertakan kredensial seperti cookie dalam permintaan lintas domain
     withCredentials: true,
@@ -28,7 +29,6 @@ apiClient.interceptors.request.use(
         return Promise.reject(error);
     }
 );
-
 
 // Mengekspor instance axios yang telah dikonfigurasi sebagai default export
 export default apiClient;

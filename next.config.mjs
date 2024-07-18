@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         // Menentukan domain-domain yang diizinkan untuk sumber gambar
-        domains: ['images.pexels.com', 'images.unsplash.com', 'unsplash.com', 'source.unsplash.com', 'localhost', 'res.cloudinary.com'],
+        domains: ['imagedelivery.net', 'img.freepik.com', 'www.balisafarimarinepark.com', 'images.pexels.com', 'images.unsplash.com', 'unsplash.com', 'source.unsplash.com', 'localhost', 'res.cloudinary.com'],
     },
     // Fungsi async untuk menangani penulisan ulang URL (rewrites)
     async rewrites() {

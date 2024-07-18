@@ -17,6 +17,8 @@
 import { useEffect, useState } from 'react';
 import { getToken } from '@/utils/auth';
 import apiClient from '@/services/apiClient';
+import ProfileUpdate from './_components/UpdateProfile';
+import ProfileCard from './_components/Profile';
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
@@ -68,6 +70,11 @@ const Profile = () => {
                     <p>Referral Code: {profile.referralCode}</p>
                 </div>
             )}
+            <br />
+            <br />
+
+            <ProfileUpdate />
+            {/* <ProfileCard /> */}
         </div>
     );
 };
