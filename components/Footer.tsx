@@ -79,7 +79,9 @@ const Footer = () => {
             </div>
             <hr className='m-5' />
             <div className='flex justify-center'>
-                <p className='text-white text-center text-[12px] lg:font-base'>© 2023 Purwadhika Digital Technology School All Rights Reserved Owned by PT Purwadhika Kirana Nusantara</p>
+                <p className='text-white text-center text-[12px] lg:font-base'>© Ilevent PT event booked ticket © 2023 Ilevent Website Sell Ticket Event All Rights Reserved Owned by PT Ilevent Kirana Nusantara
+
+                </p>
             </div>
             {/* <div className='mt-3 '>
                 <p className="font-medium text-[10px] text-white text-center">Dibuat dengan <span className="text-red-300">❤</span> oleh <a href="http://instagram.com/indahjaul" target="_blank" className="font-bold text-primary">Indah Budiati,</a><br />menggunakan

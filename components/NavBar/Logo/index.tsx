@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ isNavbarFixed }) => {
             <Image
                 alt="logo"
                 src={isNavbarFixed ? colorsLogo : graycycleLogo}
-                height={28}
+                height={36}
                 style={{ display: 'block', margin: '16px' }}
             />
         </div>

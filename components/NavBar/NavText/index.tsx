@@ -12,8 +12,10 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
     const menuItems = [
         { title: "Home", href: "/" },
         { title: "Events", href: "/events" },
-        { title: "Profile", href: "/profile" },
-        { title: "Dashboard", href: "/organizer" },
+        { title: "Join and Explore with Us !!! ", href: "/sign-in" },
+
+        // { title: "Profile", href: "/profile" },
+        // { title: "Dashboard", href: "/organizer" },
         // { title: "Testimonials", href: "/Testimonials" }
     ];
 

@@ -50,8 +50,11 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
     const menuItems = [
         { title: "Home", href: "/" },
         { title: "Events", href: "/events" },
+        { title: "Profile", href: "/profile" },
+        { title: "Order", href: "/orders" },
         // { title: "Our Teams", href: "/" },
-        { title: "Product", href: "/" },
+        // { title: "Logout", href: "/logout" },
+        { title: "Dashboard", href: "/organizer" },
         // { title: "Testimonials", href: "/Testimonials" }
     ];
 
@@ -92,7 +95,9 @@ const Navbar: React.FC<NavbarProps> = ({ isNavbarFixed, isOpen, handleClick }) =
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <CreditCard className="mr-2 h-4 w-4" />
-                                <span>Transaction</span>
+                                <Link href="/orders">
+                                    <span>Transaction</span>
+                                </Link>
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />

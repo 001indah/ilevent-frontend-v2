@@ -1,9 +1,11 @@
 import React from 'react';
 import Sidebar from './_components/sidebar';
+// import ProtectedRoute from '@/components/ProctectedRouteScopeServer';
 // import Header from './_components/Header';
 
 const OrganizerLayout = ({ children }: { children: React.ReactNode }) => {
     return (
+        // <ProtectedRoute requiredRole="ROLE_ORGANIZER">
         <div className='flex w-full'>
             {/* <p>sidebar</p> */}
             <Sidebar />
@@ -13,6 +15,7 @@ const OrganizerLayout = ({ children }: { children: React.ReactNode }) => {
                 {children}
             </div>
         </div>
+        // </ProtectedRoute>
     );
 };
 
